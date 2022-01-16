@@ -1,0 +1,93 @@
+{% extends 'mainweb/base.html' %}
+{% load static %}
+{% block content %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/bg_2.jpg' %});" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-end justify-content-center">
+      <div class="col-md-9 ftco-animate mb-5 text-center">
+        <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a href="blog.html">Blog <i class="fa fa-chevron-right"></i></a></span> <span>Blog Single <i class="fa fa-chevron-right"></i></span></p>
+        <h2 class="mb-0 bread">Blog Single</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ftco-section ftco-degree-bg">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 ftco-animate">
+  <div class="pt-5 mt-5">
+    <h3 class="mb-5">6 Feed backs</h3>
+    <ul class="comment-list">
+      <li class="comment">
+        <div class="vcard bio">
+          <img src="{% static 'images/person_1.jpg' %}" alt="Image placeholder">
+        </div>
+        <div class="comment-body">
+          <h3>John Doe</h3>
+          <div class="meta">April 12, 2020 at 1:21am</div>
+          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+          <p><a href="#" class="reply">Reply</a></p>
+        </div>
+      </li>
+
+      <li class="comment">
+        <div class="vcard bio">
+           <img src="{% static 'images/person_1.jpg' %}" alt="Image placeholder">
+        </div>
+        <div class="comment-body">
+          <h3>John Doe</h3>
+          <div class="meta">April 12, 2020 at 1:21am</div>
+          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+          <p><a href="#" class="reply">Reply</a></p>
+        </div>
+
+        <ul class="children">
+          <li class="comment">
+            <div class="vcard bio">
+               <img src="{% static 'images/person_1.jpg' %}" alt="Image placeholder">
+            </div>
+            <div class="comment-body">
+              <h3>John Doe</h3>
+              <div class="meta">April 12, 2020 at 1:21am</div>
+              <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+              <p><a href="#" class="reply">Reply</a></p>
+            </div>
+            <ul class="children">
+              <li class="comment">
+                <div class="vcard bio">
+                  <img src="{% static 'images/person_1.jpg' %}" alt="Image placeholder">
+                </div>
+                <div class="comment-body">
+                  <h3>John Doe</h3>
+                  <div class="meta">April 12, 2020 at 1:21am</div>
+                  <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                  <p><a href="#" class="reply">Reply</a></p>
+                </div>
+
+                  <ul class="children">
+                    <li class="comment">
+                      <div class="vcard bio">
+                        <img src="{% static 'images/person_1.jpg' %}" alt="Image placeholder">
+                      </div>
+                      <div class="comment-body">
+                        <h3>John Doe</h3>
+                        <div class="meta">April 12, 2020 at 1:21am</div>
+                        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                        <p><a href="#" class="reply">Reply</a></p>
+                      </div>
+                    </li>
+                  </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+</section>
+{%  endblock content%}
