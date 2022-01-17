@@ -22,7 +22,7 @@
           <img style="height: 200px;" src="{{blog.imgURL}}" alt="" class="img-fluid">
         </p>
         <h3 class="mb-3">{{blog.title}}</h3>
-        <p class="text-justify">{{blog.body|truncatewords:30}} <a href="{{ post.get_absolute_url }}">More</a></p>
+        <p class="text-justify">{{blog.body|truncatewords:30}} <a href="{% url 'mainweb:details' blog.id  %}">More</a></p>
       </div>
        {% endfor %}
     </div><br>

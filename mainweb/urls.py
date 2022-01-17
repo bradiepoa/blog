@@ -6,7 +6,7 @@ urlpatterns =[
 
 
 path("", views.homeview, name='homepage'),
-path('<int:year>/<int:month>/<int:day>/<slug:post>/', views.post_detail, name="post_detail"),
+path('details/<str:pk_details>/', views.post_detail, name="details"),
 
 path("reactions/", views.React, name='reactpage'),
 path("biz/", views.BussinessView, name='bizpage'),
