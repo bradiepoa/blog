@@ -29,7 +29,7 @@ def post_detail(request,pk_details):
 	object_list = Post.published.get(id=pk_details)
 
 	context = {'object_list':object_list}
-	return render(request, 'mainweb/details.html',context) 
+	return render(request, 'mainweb/details.html',context)
 
 def React(request):
 	return render(request, 'mainweb/reactions.html')
