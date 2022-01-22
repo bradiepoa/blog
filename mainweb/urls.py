@@ -10,6 +10,6 @@ path('details/<str:pk_details>/', views.post_detail, name="details"),
 
 path("reactions/", views.React, name='reactpage'),
 path("biz/", views.BussinessView, name='bizpage'),
-
+path("sports/", views.sportview, name='sportpage'),
 
 ]
