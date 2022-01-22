@@ -38,3 +38,20 @@ def BussinessView(request):
 
 	return render(request, 'mainweb/biz.html')
 
+def sportview(request):
+	object_list = Post.published.filter(category=1)
+
+
+	paginator = Paginator(object_list,3)
+	page = request.GET.get('page')
+
+	try:
+
+		posts = paginator.page(page)
+	except PageNotAnInteger:
+		posts = paginator.page(1)
+	except EmptyPage:
+		posts = paginator.page(paginator.num_pages)
+
+	context = {'object_list':object_list, 'page':page, 'posts':posts}
+	return render(request, 'mainweb/index.html',context)
