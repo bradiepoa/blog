@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import *
+from django.contrib.auth.models import Group
 
 # Register your models here.
 @admin.register(Post)
@@ -14,3 +15,4 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(Category)
 admin.site.register(Comment)
+admin.site.unregister(Group)
