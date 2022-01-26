@@ -19,13 +19,12 @@ def homeview(request):
 	except EmptyPage:
 		posts = paginator.page(paginator.num_pages)
 
-	context = {'object_list':object_list, 'page':page, 'posts':posts}
+	context = {'object_list':object_list, 'reclist':object_list, 'page':page, 'posts':posts}
 	return render(request, 'mainweb/index.html',context)
 
 
 def sportview(request):
 	object_list = Post.objects.filter(category=25)
-
 
 	paginator = Paginator(object_list,3)
 	page = request.GET.get('page')
@@ -38,7 +37,7 @@ def sportview(request):
 	except EmptyPage:
 		posts = paginator.page(paginator.num_pages)
 
-	context = {'object_list':object_list, 'page':page, 'posts':posts}
+	context = {'object_list':object_list, 'recent': object_list[:3], 'page':page, 'posts':posts}
 	return render(request, 'mainweb/index.html',context)
 
 
