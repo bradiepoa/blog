@@ -16,11 +16,11 @@
 </section><br/>
 <section class="blog_area section-padding pt-3">
 <div class="container">
-    
+
     <div class="row">
         <div class="col-lg-12 mb-5 mb-lg-0">
             <div class="blog_left_sidebar">
-                <article class="blog_item">   
+                <article class="blog_item">
                     <div class="blog_item_img">
                         <img class="card-img rounded-0" src="{{ object_list.imgURL }}" height="400px" alt="">
                          <p style="color: red" class="blog_item_date">Published {{ object_list.publish }}  by {{ object_list.author }}</p>
@@ -29,21 +29,24 @@
                     <div class="blog_details">
                      <h2> <a class="d-inline-block" href="">
                         {{ object_list.title }}
+
                     </a>
                     </h2>
+                        <a href="whatsapp://send?text=http://www.theglobalposts.com/details/{{ object_list.id }}" data-action="share/whatsapp/share" target="_blank">Share on Whatsapp</a>
                         <p class="text-justify">{{ object_list.body|linebreaks }}</p>
                         <ul class="blog-info-link">
                            <!--  <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li> -->
+                            <a href="whatsapp://send?text=http://www.theglobalposts.com/details/{{ object_list.id }}" data-action="share/whatsapp/share" target="_blank">Share on Whatsapp</a>
                         </ul>
                     </div>
                 </article>
 
             </div>
         </div>
-     
+
     </div>
-  
+
 </div>
-</section> 
+</section>
 
 {% endblock content %}
