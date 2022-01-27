@@ -7,44 +7,65 @@ from .models import *
 
 def homeview(request):
 	object_list = Post.published.all()
+	page = request.GET.get('page', 1)
 
-	paginator = Paginator(object_list,3)
-	page = request.GET.get('page')
+	paginator = Paginator(object_list,24)
 
 	try:
-
-		posts = paginator.page(page)
+		users = paginator.page(page)
 	except PageNotAnInteger:
-		posts = paginator.page(1)
+		users = paginator.page(1)
 	except EmptyPage:
-		posts = paginator.page(paginator.num_pages)
+		users = paginator.page(paginator.num_pages)
 
-	context = {'object_list':object_list, 'reclist':object_list, 'page':page, 'posts':posts}
+	context = {'posts':users, 'object_list':object_list}
 	return render(request, 'mainweb/index.html',context)
 
 
 def sportview(request):
 	object_list = Post.objects.filter(category=25)
 
-	paginator = Paginator(object_list,3)
-	page = request.GET.get('page')
+	context = {'object_list':object_list}
+	return render(request, 'mainweb/category.html',context)
 
-	try:
+def politicsview(request):
+	object_list = Post.objects.filter(category=26)
 
-		posts = paginator.page(page)
-	except PageNotAnInteger:
-		posts = paginator.page(1)
-	except EmptyPage:
-		posts = paginator.page(paginator.num_pages)
+	context = {'object_list':object_list}
+	return render(request, 'mainweb/category.html',context)
 
-	context = {'object_list':object_list, 'recent': object_list[:3], 'page':page, 'posts':posts}
-	return render(request, 'mainweb/index.html',context)
+def educationview(request):
+	object_list = Post.objects.filter(category=27)
+
+	context = {'object_list':object_list}
+	return render(request, 'mainweb/category.html',context)
+
+def businessview(request):
+	object_list = Post.objects.filter(category=28)
+
+	context = {'object_list':object_list}
+	return render(request, 'mainweb/category.html',context)
+
+def scienceview(request):
+	object_list = Post.objects.filter(category=29)
+
+	context = {'object_list':object_list}
+	return render(request, 'mainweb/category.html',context)
+
+def healthview(request):
+	object_list = Post.objects.filter(category=30)
+
+	context = {'object_list':object_list}
+	return render(request, 'mainweb/category.html',context)
+
+
+
 
 
 def post_detail(request,pk_details):
 
 	object_list = Post.published.get(id=pk_details)
-
+	Post.objects.get(id=pk_details).viewers+1
 	context = {'object_list':object_list}
 	return render(request, 'mainweb/details.html',context)
 

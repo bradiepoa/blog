@@ -17,41 +17,16 @@
 <section class="ftco-section ftco-degree-bg">
   <div class="container">
     <div class="row">
-      {% for blog in posts %}
+      {% for blog in object_list %}
       <div class="col-lg-4 ftco-animate">
         <p>
           <img style="height: 200px;" src="{{blog.imgURL}}" alt="" class="img-fluid">
         </p>
         <h3 class="mb-3">{{blog.title}}</h3>
         <p class="text-justify">{{blog.body|truncatewords:30}} <a href="{% url 'mainweb:details' blog.id  %}">More</a></p>
-        <p class="text-justify"><a href="{% url 'mainweb:details' blog.id  %}">{{blog.viewers}} views</a></p>
       </div>
-       {% endfor %}
+      {% endfor %}
     </div><br>
-
-    <!--{% include "pagination.html" with page=posts %}-->
-    <hr/>
-    {% if posts.has_other_pages %}
-      <ul class="pagination">
-        {% if posts.has_previous %}
-          <li><a href="?page={{ posts.previous_page_number }}">&laquo;</a></li>
-        {% else %}
-          <li class="disabled"><span>&laquo;</span></li>
-        {% endif %}
-        {% for i in posts.paginator.page_range %}
-          {% if posts.number == i %}
-            <li class="active"><span> {{ i }} <span class="sr-only">(current)</span></span></li>
-          {% else %}
-            <li><a href="?page={{ i }}"> {{ i }} </a></li>
-          {% endif %}
-        {% endfor %}
-        {% if posts.has_next %}
-          <li><a href="?page={{ posts.next_page_number }}">&raquo;</a></li>
-        {% else %}
-          <li class="disabled"><span>&raquo;</span></li>
-        {% endif %}
-      </ul>
-    {% endif %}
 
     <br>
      <div class="row pt-3">
@@ -74,9 +49,9 @@
             <div class="text">
               <h3 class="heading"><a href="{% url 'mainweb:details' rec.id  %}">{{rec.title}}</a></h3>
               <div class="meta">
-                <!--<div><a href="#"><span class="fa fa-calendar"></span> Apr. 18, 2020</a></div>
+                <div><a href="#"><span class="fa fa-calendar"></span> Apr. 18, 2020</a></div>
                 <div><a href="#"><span class="fa fa-user"></span> Admin</a></div>
-                <div><a href="#"><span class="fa fa-comment"></span> 19</a></div>-->
+                <div><a href="#"><span class="fa fa-comment"></span> 19</a></div>
               </div>
             </div>
           </div>
