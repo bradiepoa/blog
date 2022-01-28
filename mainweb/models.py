@@ -35,7 +35,7 @@ class Post(models.Model):
 	created = models.DateField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
 	status = models.CharField(max_length=10,choices=STATUS_CHIOCES, default='published ')
-	viewers = models.IntegerField(default=0, null=True)
+	viewers = models.IntegerField(default=1, null=True)
 	objects =models.Manager()
 	published = PublishedManager()
 
