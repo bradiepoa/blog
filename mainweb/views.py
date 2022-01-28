@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import *
+from django.db.models import F
 
 # Create your views here.
 
@@ -58,14 +59,14 @@ def healthview(request):
 	context = {'object_list':object_list}
 	return render(request, 'mainweb/category.html',context)
 
-
+#Product.objects.update(price=F('price') * 1.2)
 
 
 
 def post_detail(request,pk_details):
 
 	object_list = Post.published.get(id=pk_details)
-	Post.objects.get(id=pk_details).viewers+1
+	Post.objects.filter(id=pk_details).update(viewers=F('viewers') + 1)
 	context = {'object_list':object_list}
 	return render(request, 'mainweb/details.html',context)
 
