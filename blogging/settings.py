@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '-sb__c!(u-9rhom*!y!k6)&q41&acn%%#9*_4c-@sg$)ez9fm='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -124,10 +124,11 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-# STATICFILES_DIRS =[
+# STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'static')
-
 # ]
 
+
+#imges Team in the model config
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
