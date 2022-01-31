@@ -11,7 +11,7 @@ def homeview(request):
 	object_list = Post.published.all()
 	page = request.GET.get('page', 1)
 
-	paginator = Paginator(object_list,24)
+	paginator = Paginator(object_list,12)
 
 	try:
 		users = paginator.page(page)

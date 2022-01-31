@@ -3,7 +3,7 @@
 {% block title %}{{ post.title }} {% endblock %}
 {% block content %}
 
-<section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/banner.jpg' %});" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2 mt-3" style="background-image: url({{ object_list.imgURL }});" data-stellar-background-ratio="0.5">
   <div class="overlay"></div>
   <div class="container">
     <div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -21,7 +21,7 @@
             <div class="blog_left_sidebar">
                 <article class="blog_item">
                     <div class="blog_item_img">
-                        <img class="card-img rounded-0" src="{{ object_list.imgURL }}" height="400px" alt="">
+                        <!-- <img class="card-img rounded-0" src="{{ object_list.imgURL }}" height="400px" alt=""> -->
                          <p style="color: red" class="blog_item_date">Published {{ object_list.publish }}  by {{ object_list.author }}</p>
                     </div>
 
